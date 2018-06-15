@@ -56,7 +56,7 @@ void crack()
         uart_puts(UART_DEBUG, "TECHNISAT GAMMA 5 DETECTED\n");
         uart_puts(UART_DEBUG, "UNCRACKABLE\n");
 
-    } else if (memcmp(&kwp_component_2[4], "BNO 0001", 8) == 0) {
+    } else if (memcmp(&kwp_component_2[3], "BNO 0001", 8) == 0) {
         uart_puts(UART_DEBUG, "AUDI RNS-D (BLAUPUNKT) DETECTED\n");
         uart_puts(UART_DEBUG, "UNCRACKABLE\n");
 

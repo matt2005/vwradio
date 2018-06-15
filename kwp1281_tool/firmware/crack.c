@@ -56,8 +56,17 @@ void crack()
         uart_puts(UART_DEBUG, "TECHNISAT GAMMA 5 DETECTED\n");
         uart_puts(UART_DEBUG, "UNCRACKABLE\n");
 
+    } else if (memcmp(&kwp_component_2[4], "BNO 0001", 8) == 0) {
+        uart_puts(UART_DEBUG, "AUDI RNS-D (BLAUPUNKT) DETECTED\n");
+        uart_puts(UART_DEBUG, "UNCRACKABLE\n");
+
+    } else if ((memcmp(&kwp_component_1[0], " Radio      ", 12) == 0) && (memcmp(&kwp_component_2[0], "       0001", 11) == 0)) {
+        uart_puts(UART_DEBUG, "AUDI CHORUS/CONCERT (BLAUPUNKT) DETECTED\n");
+        uart_puts(UART_DEBUG, "UNCRACKABLE\n");
+
     } else {
         uart_puts(UART_DEBUG, "UNKNOWN RADIO\n");
         uart_puts(UART_DEBUG, "UNCRACKABLE\n");
     }
+
 }

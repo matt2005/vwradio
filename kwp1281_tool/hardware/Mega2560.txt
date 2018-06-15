@@ -1,0 +1,17 @@
+Connection radio->MC33660->Arduino Mega2560:
+
+12V to power radio
+GND is common for radio,MC33660 and Arduino(so also computer over USB)
+K-line to radio K-line pin
+K-line over 510Ohm(2x1kOhm in parallel) to 12V
+
+12V to pin 1 of MC33660
+GND to pin 3 of MC33660
+K-line to pin 4 of MC33660
+Arduino TX1 to pin 5 of MC33660
+Arduino RX1 to pin 6 of MC33660
+Arduino 5V to pin 7 of MC33660
+Arduino 5V to pin 8 of MC33660
+
+MC33660 datasheet
+https://www.nxp.com/docs/en/data-sheet/MC33660.pdf

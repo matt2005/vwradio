@@ -27,4 +27,9 @@ clean:
 	find . -depth -name '*.o'   -print -delete
 	find . -depth -name '*.pyc' -print -delete
 
+arduino_mega:
+	avr-gcc -DF_CPU=16000000 -mmcu=atmega2560 -g -Wall -Os -std=c99 -I. -o $(PROJECT).elf $(SOURCES)
+	avr-objcopy -j .text -j .data -O ihex $(PROJECT).elf $(PROJECT).hex
+	avrdude -cwiring -P /dev/ttyACM0 -D -p atmega2560 -U flash:w:$(PROJECT).hex
+
 all: clean $(PROJECT).hex program
